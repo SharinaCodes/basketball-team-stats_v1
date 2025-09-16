@@ -46,9 +46,9 @@ def show_stats():
         print(f"Total players: {len(team['players'])}")
         print(f"Total experienced: {team['exp_count']}")
         print(f"Total inexperienced: {team['inexp_count']}")
-        print(f"Average height: {team['avg_height'].2f}")
+        print(f"Average height: {team['avg_height']:.2f}")
 
-        print("\nPlayers on Team:")
+        print("\nPlayers on Team (shortest to tallest):")
         print(" ", ", ".join(team_players))
 
         print("\nGuardians:")
