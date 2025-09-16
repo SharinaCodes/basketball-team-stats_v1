@@ -25,15 +25,15 @@ def show_stats():
         elif option == 'C':
             team_name = 'Warriors'
         else:
-            print("\nInvalid selection (chose A, B, or C): " )
+            print("\nInvalid selection (choose A, B, or C).")
+            continue  
 
         team = balanced_teams[team_name]
-        print(type(team))
 
         print(f"\nTeam {team_name} Stats")
         print("--------------------")
 
-        # parse data for summary        
+        # parse for display
         team_players = []
         team_guardians = []
 
@@ -41,27 +41,24 @@ def show_stats():
             team_players.append(player['name'])
             #flatten list of lists
             team_guardians.extend(player['guardians'])
-        
-            
-        print(f"Total players: {len(team)}")
+
+        # display stats
+        print(f"Total players: {len(team['players'])}")
         print(f"Total experienced: {team['exp_count']}")
         print(f"Total inexperienced: {team['inexp_count']}")
-        print(f"Average height: {team['avg_height']: .2f}")
+        print(f"Average height: {team['avg_height'].2f}")
+
         print("\nPlayers on Team:")
         print(" ", ", ".join(team_players))
+
         print("\nGuardians:")
         print(" ", ", ".join(team_guardians))
 
-
-        to_exit = input("\nPress ENTER to continue...\nPress any other key to exit\n")
-
+        to_exit = input("\nPress ENTER to continue...\nPress any other key to Quit the program\n")
         if to_exit == '':
-            print()
-            show_menu()
+            return  
         else:
-            sys.exit()
-
-    
+            sys.exit()   
     
 
 def show_menu():
